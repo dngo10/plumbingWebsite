@@ -1,0 +1,1 @@
+import {TypeOfOccupancy} from "../../Interfaces/occupancy-category";

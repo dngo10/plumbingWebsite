@@ -1,4 +1,5 @@
 import {TypeOfOccupancy} from "../../Interfaces/occupancy-category";
+import { isRegExp } from 'util';
 
 export function MaleWaterClosetsCount(typeOfOccupancy: TypeOfOccupancy, maleNumber: number): number {
 
@@ -113,7 +114,7 @@ export function FemaleWaterClosetsCount(typeOfOccupancy: TypeOfOccupancy, numOfF
     return 0;
 }
 
-export function RoomWaterClosetsCount(typeOfOccupancy: TypeOfOccupancy, numOfRoom: number){
+export function RoomWaterClosetsCount(typeOfOccupancy: TypeOfOccupancy, numOfRoom: number): number{
     if(typeOfOccupancy.id == 11 ||  //I-2 -- the first one
        typeOfOccupancy.id == 12){   //I-2 -- the second one
         return Math.ceil(numOfRoom);
@@ -121,16 +122,38 @@ export function RoomWaterClosetsCount(typeOfOccupancy: TypeOfOccupancy, numOfRoo
     return 0;
 }
 
-export function PatientsWaterClosetsCount(typeOfOccupancy: TypeOfOccupancy, numOfPatients: number){
+export function PatientsWaterClosetsCount(typeOfOccupancy: TypeOfOccupancy, numOfPatients: number): number{
     if(typeOfOccupancy.id == 11){
         return Math.ceil(numOfPatients/8.0);
     }
     return 0;
 }
 
-export function SleepingRoomWaterClosetsCount(typeOfOccupancy: TypeOfOccupancy, numOfSleepingRoom: number){
+export function SleepingRoomWaterClosetsCount(typeOfOccupancy: TypeOfOccupancy, numOfSleepingRoom: number): number{
     if(typeOfOccupancy.id == 19){
         return Math.ceil(numOfSleepingRoom);
     }
+    return 0;
+}
+
+export function ApartmentWaterClosetsCount(typeOfOccupancy: TypeOfOccupancy, numOfApartment: number): number{
+    if(typeOfOccupancy.id == 22){ // R-2 Type 3
+        return Math.ceil(numOfApartment);
+    }
+    return 0;
+}
+
+export function FamilyDwellingWaterClosetsCount(typeOfOccupancy: TypeOfOccupancy, numOfFamilyDwelling: number): number{
+    if(typeOfOccupancy.id == 24){
+        return Math.ceil(numOfFamilyDwelling / 2.0);
+    }
+    return 0;
+}
+
+export function CellWaterClosetCount(typeOfOccupancy: TypeOfOccupancy, numOfCell: number): number{
+    if(typeOfOccupancy.id == 14){
+        return Math.ceil(numOfCell);
+    }
+    return 0;
 }
 

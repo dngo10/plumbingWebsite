@@ -13,8 +13,8 @@ export class TypeOfOccupancyService {
       {id: 4,  type: 'A-4', sub_type: null, discription: "Assembly occupancy(indoor activities or sporting events with spectator seating)- swimming pools, skating rinks, arenas and gymnasiums"},
       {id: 5,  type: 'A-5', sub_type: null, discription: "Assembly occupancy (outdoor activities or sporting events)- amusement parks, grandstands and stadiums	"},
       
-      {id: 6,  type: 'B', sub_type: null, discription:  "Business occupancy (office, professional or service type transactions)- banks, vet clinics, hospitals, car wash, banks, beauty salons, ambulatory health care facilities, laundries and dry cleaning, educational institutions (above high school), or training facilities not located within school, post offices and printing shops"},
-      {id: 7,  type: 'E', sub_type: null, discription: "Educational occupancy-private or public schools"},
+      {id: 6,  type: 'B',   sub_type: null, discription:  "Business occupancy (office, professional or service type transactions)- banks, vet clinics, hospitals, car wash, banks, beauty salons, ambulatory health care facilities, laundries and dry cleaning, educational institutions (above high school), or training facilities not located within school, post offices and printing shops"},
+      {id: 7,  type: 'E',   sub_type: null, discription: "Educational occupancy-private or public schools"},
       {id: 8,  type: 'F-1', sub_type: null, discription: "Factory or Industrial occupancy-fabricating or assembly work"},
       {id: 9,  type: 'F-2', sub_type: null, discription: "Factory or Industrial occupancy-fabricating or assembly work"},
 

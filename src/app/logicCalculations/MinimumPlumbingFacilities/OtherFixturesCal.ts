@@ -1,35 +1,46 @@
 import {TypeOfOccupancy} from "../../Interfaces/occupancy-category";
 import { type } from 'os';
+import { table422_1Ids } from 'src/app/Interfaces/table422-1Units';
+import { MatHeaderCell } from '@angular/material/table';
 
 
-export function OtherFixureNeeded(typeOfOccupancy: TypeOfOccupancy): string {
-    if(typeOfOccupancy.id == 1 ||
-       typeOfOccupancy.id == 2 ||    
-       typeOfOccupancy.id == 3 ||    
-       typeOfOccupancy.id == 4 ||    
-       typeOfOccupancy.id == 5 ||    
-       typeOfOccupancy.id == 6 ||    
-       typeOfOccupancy.id == 7 ||    
-       typeOfOccupancy.id == 8 ||
-       typeOfOccupancy.id == 9 ||    
-       typeOfOccupancy.id == 11 ||
-       typeOfOccupancy.id == 15 ||
-       typeOfOccupancy.id == 17 ||
-       typeOfOccupancy.id == 18 ||
-       typeOfOccupancy.id == 19 ||
-       typeOfOccupancy.id == 20 ||
-       typeOfOccupancy.id == 21 ||
-       typeOfOccupancy.id == 23 ||
-       typeOfOccupancy.id == 25 ||
-       typeOfOccupancy.id == 26 ||
-       typeOfOccupancy.id == 27
+export function ServiceSinkOrLaundryTrayOtherFixureNeeded(typeOfOccupancy: TypeOfOccupancy) {
+    if(typeOfOccupancy.id == table422_1Ids.A1 ||
+       typeOfOccupancy.id == table422_1Ids.A2 ||    
+       typeOfOccupancy.id == table422_1Ids.A3 ||    
+       typeOfOccupancy.id == table422_1Ids.A4 ||    
+       typeOfOccupancy.id == table422_1Ids.A5 ||    
+       typeOfOccupancy.id == table422_1Ids.B ||    
+       typeOfOccupancy.id == table422_1Ids.E ||    
+       typeOfOccupancy.id == table422_1Ids.F1 ||
+       typeOfOccupancy.id == table422_1Ids.F2 ||    
+       typeOfOccupancy.id == table422_1Ids.I2_1 ||
+       typeOfOccupancy.id == table422_1Ids.I3_2 ||
+       typeOfOccupancy.id == table422_1Ids.I4 ||
+       typeOfOccupancy.id == table422_1Ids.M ||
+       typeOfOccupancy.id == table422_1Ids.R1 ||
+       typeOfOccupancy.id == table422_1Ids.R2_1 ||
+       typeOfOccupancy.id == table422_1Ids.R3_1 ||
+       typeOfOccupancy.id == table422_1Ids.R4 ||
+       typeOfOccupancy.id == table422_1Ids.S1 ||
+       typeOfOccupancy.id == table422_1Ids.S2
     ){
-        return "1 service sink or laundry tray";
-    } else if(typeOfOccupancy.id == 22){
-        return "1 kitchen sink per apartment. 1 laundry tray or 1 automatic clothes washer connection per unit or 1 laundry tray or 1automaticclothes washerconnection foreach 12 units";
-    } else if(typeOfOccupancy.id == 24){
-        return "1 kitchen sink and 1 automatic clothes washer connection per one and two family dwelling";
+        return 1;
     }
+    return 0;
+}
 
-    return "";
+export function Multiple1OtherFixureNeeded(typeOfOccupancy: TypeOfOccupancy, numofApartment: number){
+    if(typeOfOccupancy.id == table422_1Ids.R2_3){
+        return Math.ceil(numofApartment/12.0);
+    } 
+    return 0;
+}
+    
+    
+export function Multiple2OtherFixureNeeded(typeOfOccupancy: TypeOfOccupancy, numofFamilyDwelling: number){
+    if(typeOfOccupancy.id == table422_1Ids.R3_2){
+        return Math.ceil(numofFamilyDwelling/2.0);
+    } 
+    return 0;
 }

@@ -6,18 +6,19 @@
  */
 
 import {TypeOfOccupancy} from "../../Interfaces/occupancy-category";
+import { table422_1Ids } from 'src/app/Interfaces/table422-1Units';
 
 export function PersonDrinkingFountainsCounts(typeOfOccupancy :TypeOfOccupancy, numOfPerson) {
-    if(typeOfOccupancy.id == 1 ||
-       typeOfOccupancy.id == 2 ||
-       typeOfOccupancy.id == 3 ||
-       typeOfOccupancy.id == 4 ||
-       typeOfOccupancy.id == 5 ||
-       typeOfOccupancy.id == 8 ||
-       typeOfOccupancy.id == 9 ||
-       typeOfOccupancy.id == 18 ||
-       typeOfOccupancy.id == 26 ||
-       typeOfOccupancy.id == 27
+    if(typeOfOccupancy.id == table422_1Ids.A1 ||
+       typeOfOccupancy.id == table422_1Ids.A2 ||
+       typeOfOccupancy.id == table422_1Ids.A3 ||
+       typeOfOccupancy.id == table422_1Ids.A4 ||
+       typeOfOccupancy.id == table422_1Ids.A5 ||
+       typeOfOccupancy.id == table422_1Ids.F1 ||
+       typeOfOccupancy.id == table422_1Ids.F2 ||
+       typeOfOccupancy.id == table422_1Ids.M  ||
+       typeOfOccupancy.id == table422_1Ids.S1 ||
+       typeOfOccupancy.id == table422_1Ids.S2
     ){
         if(1 <= numOfPerson && numOfPerson <= 250) return 1;
         else if(251 <= numOfPerson && numOfPerson <= 500) return 2;
@@ -25,20 +26,34 @@ export function PersonDrinkingFountainsCounts(typeOfOccupancy :TypeOfOccupancy, 
         else if(numOfPerson > 500){
             return 3 + Math.ceil((numOfPerson-750)/ 500.0);
         }
-    } else if(typeOfOccupancy.id == 6 ||
-              typeOfOccupancy.id == 7 ||
-              typeOfOccupancy.id == 11 ||
-              typeOfOccupancy.id == 16 ||
-              typeOfOccupancy.id == 17 ||
-              typeOfOccupancy.id == 20 ||
-              typeOfOccupancy.id == 23 ||
-              typeOfOccupancy.id == 25  
+    } else if(typeOfOccupancy.id == table422_1Ids.B ||
+              typeOfOccupancy.id == table422_1Ids.E ||
+              typeOfOccupancy.id == table422_1Ids.I2_1 ||
+              typeOfOccupancy.id == table422_1Ids.I3_3 ||
+              typeOfOccupancy.id == table422_1Ids.I4 ||
+              typeOfOccupancy.id == table422_1Ids.R2_1 ||
+              typeOfOccupancy.id == table422_1Ids.R3_1 ||
+              typeOfOccupancy.id == table422_1Ids.R4  
     ){
         return Math.ceil(numOfPerson/150.0);
     } else if(typeOfOccupancy.id == 10){
         return 1;
     }
 
+    return 0;
+}
+
+export function ServiceAndLaundryDrinkingFountainsCounts(typeOfOccupancy: TypeOfOccupancy){
+    if(typeOfOccupancy.id == table422_1Ids.I1){
+        return 1;
+    }
+    return 0;
+}
+
+export function CellBlockFloorDrinkingFountainsCounts(typeOfOccupancy: TypeOfOccupancy, numOfCellBLockFloor: number){
+    if(typeOfOccupancy.id == table422_1Ids.I3_1){
+        return Math.ceil(numOfCellBLockFloor);
+    }
     return 0;
 }
 
@@ -50,25 +65,12 @@ export function RoomsDrinkingFountainsCounts(typeOfOccupancy :TypeOfOccupancy, n
     return 0;
 }
 
-export function BlockOrFloorOfCell(typeOfOccupancy: TypeOfOccupancy, numOfBlockorFloor: number): number{
-    if(typeOfOccupancy.id == 14 ||
-       typeOfOccupancy.id == 15 // Explicitly floor 
-        ){
-        return Math.ceil(numOfBlockorFloor);
+export function FloorDrinkingFountainsCounts(typeOfOccupancy: TypeOfOccupancy, numOfFloor: number): number{
+    if(typeOfOccupancy.id == table422_1Ids.I3_2){
+        return Math.ceil(numOfFloor);
     }
 
     return 0;
-}
-
-export function NoNeedForCeiling(typeOfOccupancy: TypeOfOccupancy, numOfBlockorFloor: number): number{
-    if(typeOfOccupancy.id ==13 ||
-       typeOfOccupancy.id == 19 ||
-       typeOfOccupancy.id == 21 ||
-       typeOfOccupancy.id == 22 ||
-       typeOfOccupancy.id == 24    
-    ){
-        return 0; // THIS IS BECAUSE THEY ARE NOT IN CATEGORY.
-    }
 }
 
 

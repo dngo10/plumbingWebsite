@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {fixtureUnit} from "../app/logicCalculations/MinimumPlumbingFacilities/FixtureAndUnit";
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'gouvisplumbing';
   title1 = 'gouvisplumbing12'
+
 }
 
 

@@ -1,4 +1,4 @@
-export const enum table422_1Units{
+export enum table422_1Units{
     person,
     male,
     female,
@@ -15,7 +15,7 @@ export const enum table422_1Units{
     otherMultiple2, // "1 kitchen sink and 1 automatic clothes washer connection per one and two family dwelling"
 }
 
-export const enum table422_1Categories{
+export enum table422_1Categories{
     waterClosets,
     urinals,
     lavatories,
@@ -62,7 +62,7 @@ export const enum table422_1Ids{
     S2
 }
 
-export const table422_1Units_Names: Map<table422_1Units, string> = new Map(
+export let table422_1Units_Names: Map<table422_1Units, string> = new Map<table422_1Units, string>(
     [
         [table422_1Units.apartment, "apartment"],
         [table422_1Units.male, "male"],

@@ -1,4 +1,4 @@
-export enum table422_1Units{
+export const enum table422_1Units{
     person,
     male,
     female,
@@ -15,7 +15,7 @@ export enum table422_1Units{
     otherMultiple2, // "1 kitchen sink and 1 automatic clothes washer connection per one and two family dwelling"
 }
 
-export enum table422_1Categories{
+export const enum table422_1Categories{
     waterClosets,
     urinals,
     lavatories,
@@ -24,7 +24,15 @@ export enum table422_1Categories{
     other
 }
 
-export enum table422_1Ids{
+export let table422_1CategoriesSet : Set<table422_1Categories> = new Set<table422_1Categories>();
+table422_1CategoriesSet.add(table422_1Categories.DrinkingFountains);
+table422_1CategoriesSet.add(table422_1Categories.bathtubsOrShowers);
+table422_1CategoriesSet.add(table422_1Categories.lavatories);
+table422_1CategoriesSet.add(table422_1Categories.other);
+table422_1CategoriesSet.add(table422_1Categories.urinals);
+table422_1CategoriesSet.add(table422_1Categories.waterClosets);
+
+export const enum table422_1Ids{
     A1 = 1,
     A2,
     A3,
@@ -72,7 +80,7 @@ export const table422_1Units_Names: Map<table422_1Units, string> = new Map(
     ]
 );
 
-export const typeAndAllowance : Map<[table422_1Categories, table422_1Units], Array<number>> = new Map(
+export const typeAndAllowance : Map<[table422_1Categories, table422_1Units], Array<table422_1Ids>> = new Map(
 [
     [[table422_1Categories.waterClosets, table422_1Units.person], [15]],
     [[table422_1Categories.waterClosets, table422_1Units.male],  [1,2,3,4,5,6,7,8,9,10,13,16,17,18,20,21,23,25,26,27]],

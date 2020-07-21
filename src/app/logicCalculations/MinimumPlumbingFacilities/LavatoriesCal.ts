@@ -193,3 +193,10 @@ export function CellLavatoriesCount(typeOfOccupancy: TypeOfOccupancy, numOfCell:
     }
     return 0;
 }
+
+export function PersonLavatoriesCount(typeOfOccupancy: TypeOfOccupancy, numOfPerson: number): number{
+    if(typeOfOccupancy.id == table422_1Ids.I3_1){
+        return Math.ceil(numOfPerson/10.0);
+    }
+    return 0;
+}

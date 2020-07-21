@@ -178,3 +178,10 @@ export function CellWaterClosetCount(typeOfOccupancy: TypeOfOccupancy, numOfCell
     return 0;
 }
 
+export function PersonWaterClosetCount(typeOfOccupancy: TypeOfOccupancy, numOfPerson: number): number{
+    if(typeOfOccupancy.id == table422_1Ids.I3_2){
+        return Math.ceil(numOfPerson/8.0);
+    }
+    return 0;
+}
+

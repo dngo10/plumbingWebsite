@@ -1,5 +1,4 @@
 import {TypeOfOccupancy} from "../../Interfaces/occupancy-category";
-import { type } from 'os';
 import { table422_1Ids } from 'src/app/Interfaces/table422-1Units';
 
 export function PersonBathTubShowerCounts( typeOfOccupancy :TypeOfOccupancy, numOfPerson: number){

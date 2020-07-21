@@ -1,5 +1,4 @@
 import {TypeOfOccupancy} from "../../Interfaces/occupancy-category";
-import { type } from 'os';
 import { table422_1Ids } from 'src/app/Interfaces/table422-1Units';
 import { MatHeaderCell } from '@angular/material/table';
 

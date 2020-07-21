@@ -9,18 +9,13 @@ import {TypeOfOccupancyService} from 'src/app/services/type-of-occupancy.service
   styleUrls: ['./topbar.component.css']
 })
 export class TopbarComponent implements OnInit {
-  abc : fixtureUnit;
-  occ : TypeOfOccupancy;
-  temp : TypeOfOccupancy[];
 
   constructor(private TOservice: TypeOfOccupancyService) {
     
   }
 
   ngOnInit(): void {
-    this.temp = this.TOservice.getTypeOfOccupancy();
-    this.occ = this.temp[11];
-    this.abc = new fixtureUnit(this.occ);
+
   }
 
 }

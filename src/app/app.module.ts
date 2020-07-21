@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import {MaterialsModule} from './materials/materials.module';
 import { MinimumRequiredFixturesComponent } from './components/minimum-required-fixtures/minimum-required-fixtures.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   exports:[
@@ -16,13 +18,15 @@ import { MinimumRequiredFixturesComponent } from './components/minimum-required-
   declarations: [
     AppComponent,
     TopbarComponent,
-    MinimumRequiredFixturesComponent
+    MinimumRequiredFixturesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialsModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

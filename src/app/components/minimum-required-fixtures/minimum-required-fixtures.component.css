@@ -1,0 +1,28 @@
+.mat-form-1{
+    width: 100%;
+    background-color: white;
+}
+
+
+.option1{
+    float: left;
+}
+
+.id1{
+    float: left;
+    width: 30px;
+
+}
+
+.personInput{
+    width: 200px;
+}
+
+.subType1{
+    float: left;
+
+}
+
+/deep/ .mat-tooltip {
+    font-size: 14px;
+  }

@@ -11,10 +11,4 @@ import * as fixtureUnit from "./FixtureAndUnit";
 import {TypeOfOccupancy} from "../../Interfaces/occupancy-category";
 
 export class TotalFacilitiesRequired{
-    public waterclosetAmount: fixtureUnit.fixtureUnit;
-    public bathtabs_showerAmount: fixtureUnit.fixtureUnit;
-    public drinkingfountainAmount: fixtureUnit.fixtureUnit;
-    public urinalsAmount: fixtureUnit.fixtureUnit;
-    public lavatoriesAmount: fixtureUnit.fixtureUnit;
-    public otherFixtureAmount: fixtureUnit.fixtureUnit;
 }

@@ -17,17 +17,13 @@ export class fixtureUnit {
         this.getUnitsAllowance();
     }
 
-    public getUnitName(){
-        
-    }
-
     public initUnitMapAndAmmountMap(){
         //Check which units a
         for (const [k,v] of typeAndAllowance) {
             if(v.includes(this.occupancy.id.valueOf())){
                 this.unit.set(k, 0);
             }
-        }       
+        }
     }
 
     public getUnitsAllowance() : Set<string>{
@@ -39,8 +35,12 @@ export class fixtureUnit {
     }
 
     public getUnitsByCategories(tableCat: table422_1Categories): Set<table422_1Units>{
-        
-        return null;
+        let ans: Set<table422_1Units> = new Set<table422_1Units>();
+        for (const value of this.unit.keys()) {
+            if(value[0] == tableCat){
+                ans.add(value[1]);
+            }
+        }
+        return ans;
     }
-
 }

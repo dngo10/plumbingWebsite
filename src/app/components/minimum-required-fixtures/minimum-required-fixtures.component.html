@@ -1,1 +1,68 @@
+<p>Choose Type Of Occupancy</p>
 
+<div>
+    <mat-form-field appearance="fill" [hideRequiredMarker]="hideRequiredControl.value"
+        [floatLabel]="floatLabelControl.value"
+        class="mat-form-1"
+        >
+        <mat-select required >
+            <mat-option *ngFor="let occupancy of occupancyType"
+             matTooltip={{occupancy.discription}}
+             (click)="getOccupancyType(occupancy)"
+            >
+                <div class="option1">
+                    <span class="id1">
+                        {{occupancy.type}}
+                    </span>
+                    
+                    <span class="subType1"  *ngIf="occupancy.sub_type != null">
+                        {{occupancy.sub_type}}
+                    </span>
+                </div>
+
+            </mat-option>
+
+        </mat-select>
+        <mat-label *ngIf="choosenTypeOfOccupancy != null">
+            <b>{{choosenTypeOfOccupancy.type}}</b>
+            <span *ngIf="choosenTypeOfOccupancy.sub_type != null">
+                => {{choosenTypeOfOccupancy.sub_type}}
+            </span>
+        </mat-label>
+    </mat-form-field>
+</div>
+
+<div>
+
+    <mat-form-field class="personInput">
+        <mat-label>Number of {{unit}}</mat-label>
+            <input matInput [(ngModel)]="numOfPerson"  placeholder="0" >
+        </mat-form-field> 
+    
+        <button mat-icon-button aria-label="refresh icon" (click)="targetNumberRefesh()">
+            <mat-icon>refresh</mat-icon>
+        </button>
+
+    <mat-form-field class="personInput">
+        <mat-label>Area (sqft)</mat-label>
+        <input matInput [(ngModel)]="areaValue" placeholder="0" value="0">   
+    </mat-form-field>
+    
+    <button mat-icon-button aria-label="refresh icon" (click)="targetAreaRefresh()">
+        <mat-icon>refresh</mat-icon>
+    </button>
+
+</div>
+
+
+
+<div>
+    <p>Total Fixtures Needed</p>
+</div>
+
+<!--
+
+            <mat-option>-- None --</mat-option>
+            <mat-option value="option">Option</mat-option>
+
+-->

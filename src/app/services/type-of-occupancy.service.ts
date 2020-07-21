@@ -9,7 +9,7 @@ export class TypeOfOccupancyService {
 
   typeOfOccupancy: TypeOfOccupancy[] = [
       {id: table422_1Ids.A1,  type: 'A-1', sub_type: null, discription: "Assembly occupancy (fixed or permanent seating)- theaters, concert halls, and auditoriums"},
-      {id: table422_1Ids.A2,  type: 'A-2', sub_type: null, discription: "Assembly occupancy-restaurants, pubs, lounges, night clubs and banquet halls"},
+      {id: table422_1Ids.A2,  type: 'A-2', sub_type: null, discription: "Assembly occupancy restaurants, pubs, lounges, night clubs and banquet halls"},
       {id: table422_1Ids.A3,  type: 'A-3', sub_type: null, discription: "Assembly occupancy (typical without fixed or permanent seating)-arcades, places of worship, museums, libraries, lecture halls, gymnasiums (without spectator seating), indoor pools (without spectator seating)"},
       {id: table422_1Ids.A4,  type: 'A-4', sub_type: null, discription: "Assembly occupancy(indoor activities or sporting events with spectator seating)- swimming pools, skating rinks, arenas and gymnasiums"},
       {id: table422_1Ids.A5,  type: 'A-5', sub_type: null, discription: "Assembly occupancy (outdoor activities or sporting events)- amusement parks, grandstands and stadiums	"},

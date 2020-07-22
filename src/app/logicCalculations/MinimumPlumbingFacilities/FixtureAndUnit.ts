@@ -1,4 +1,4 @@
-import { table422_1Units, table422_1Units_Names } from 'src/app/Interfaces/table422-1Units';
+import { table422_1Units, table422_1Units_Names, table422_1CategoriesNames } from 'src/app/Interfaces/table422-1Units';
 import {TypeOfOccupancy} from '../../Interfaces/occupancy-category';
 import {table422_1Categories} from '../../Interfaces/table422-1Units';
 import {typeAndAllowance} from '../../Interfaces/table422-1Units';
@@ -13,7 +13,12 @@ import * as otherFixtures from "./OtherFixturesCal";
 export class fixtureUnit {
 
     public occupancy: TypeOfOccupancy;
+
+    // This is UNIT INPUT
     public unit : Map<[table422_1Categories, table422_1Units] , number>;
+
+    // This is UNIT OUTPUT
+    public FixtureRequireds: Map<table422_1Categories, number>;
     
     //Employee
     constructor(occupancy: TypeOfOccupancy) {
@@ -21,6 +26,13 @@ export class fixtureUnit {
         this.unit = new Map<[table422_1Categories, table422_1Units] , number>();
         this.InitUnitMapAndAmmountMap();
         this.GetUnitsAllowance();
+
+        this.FixtureRequireds = new Map<table422_1Categories, number>();
+
+        for (const [k,v] of table422_1CategoriesNames) {
+            this.FixtureRequireds.set(k, 0);
+        }
+
     }
 
     private InitUnitMapAndAmmountMap(){
@@ -30,6 +42,17 @@ export class fixtureUnit {
                 this.unit.set(k, 0);
             }
         }
+    }
+
+    public Recalculate(): Map<table422_1Categories, number>{
+        this.FixtureRequireds.set(table422_1Categories.DrinkingFountains, this.DrinkingFoutainsCal());
+        this.FixtureRequireds.set(table422_1Categories.bathtubsOrShowers, this.BathTubShowersCal());
+        this.FixtureRequireds.set(table422_1Categories.lavatories, this.LavatoriesCal());
+        this.FixtureRequireds.set(table422_1Categories.other, this.OtherCal());
+        this.FixtureRequireds.set(table422_1Categories.urinals, this.UrinalsCal());
+        this.FixtureRequireds.set(table422_1Categories.waterClosets, this.WaterclosetCal());
+
+        return this.FixtureRequireds;
     }
 
     public GetUnitsAllowance() : Set<string>{
@@ -141,7 +164,7 @@ export class fixtureUnit {
         return ans;       
     }
 
-    public DrinkingFoutains(): number{
+    public DrinkingFoutainsCal(): number{
         let ans: number = 0;
         for (const [k,v] of this.unit) {
             if(k[0] == table422_1Categories.DrinkingFountains){

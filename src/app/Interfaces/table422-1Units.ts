@@ -24,6 +24,17 @@ export enum table422_1Categories{
     other
 }
 
+export let table422_1CategoriesNames: Map<table422_1Categories, string> = new Map<table422_1Categories, string>(
+    [
+        [table422_1Categories.waterClosets, "WATER CLOSETS"],
+        [table422_1Categories.urinals, "URINALS"],
+        [table422_1Categories.lavatories, "LAVATORIES "],
+        [table422_1Categories.bathtubsOrShowers, "BATHTUBS OR SHOWERS"],
+        [table422_1Categories.DrinkingFountains, "DRINKING FOUNTAINS/ FACILITIES"],
+        [table422_1Categories.other, "OTHER"],
+    ]
+); 
+
 export let table422_1CategoriesSet : Set<table422_1Categories> = new Set<table422_1Categories>();
 table422_1CategoriesSet.add(table422_1Categories.DrinkingFountains);
 table422_1CategoriesSet.add(table422_1Categories.bathtubsOrShowers);

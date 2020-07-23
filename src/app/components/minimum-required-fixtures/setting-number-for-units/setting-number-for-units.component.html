@@ -1,0 +1,10 @@
+<p>setting-number-for-units works!</p>
+
+<div *ngFor="let item of mapNumber | keyvalue">
+    <h1>{{table422_1CategoriesNames.get(item.key)}}</h1>
+    <div *ngFor="let fixture of item.value">
+        {{table422_1Units_Names.get(fixture)}}
+
+        <p *ngIf="item.value.length > 1">OR</p>
+    </div>
+</div>

@@ -34,6 +34,8 @@
 
 <div>
 
+
+
     <mat-form-field class="personInput">
         <mat-label>Number of {{unit}}</mat-label>
             <input matInput [(ngModel)]="numOfPerson"  placeholder="0" >
@@ -54,7 +56,15 @@
 
 </div>
 
+<div *ngIf="choosenfixtureUnit != null">
+    <app-setting-number-for-units
+    [fixtureUnit] = "choosenfixtureUnit"
 
+></app-setting-number-for-units>
+</div>
+
+
+<app-unit-fixture></app-unit-fixture>
 
 <div>
     <p>Total Fixtures Needed</p>

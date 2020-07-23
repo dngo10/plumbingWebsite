@@ -1,3 +1,5 @@
+
+
 export enum table422_1Units{
     person,
     male,
@@ -51,6 +53,7 @@ export enum table422_1Ids{
 
 export let table422_1Units_Names: Map<table422_1Units, string> = new Map<table422_1Units, string>(
     [
+        [table422_1Units.patient, "patient"],
         [table422_1Units.apartment, "apartment"],
         [table422_1Units.male, "male"],
         [table422_1Units.female, "female"],

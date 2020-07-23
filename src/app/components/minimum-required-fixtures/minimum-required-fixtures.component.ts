@@ -5,6 +5,8 @@ import { TypeOfOccupancy } from 'src/app/Interfaces/occupancy-category';
 import { OccupantLoadFactorService } from 'src/app/services/occupant-load-factor.service';
 import { OccupantLoadFactor } from 'src/app/Interfaces/occupant-load-factor';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {TotalFacilitiesRequired} from '../../logicCalculations/MinimumPlumbingFacilities/TotalFacilitiesRequired';
+import { fixtureUnit } from 'src/app/logicCalculations/MinimumPlumbingFacilities/FixtureAndUnit';
 
 @Component({
   selector: 'app-minimum-required-fixtures',
@@ -17,6 +19,9 @@ export class MinimumRequiredFixturesComponent implements OnInit {
   floatLabelControl = new FormControl('auto');
   occupancyType : TypeOfOccupancy[];
   occupantLoadFactor: OccupantLoadFactor[];
+  totalFixturesRequired: TotalFacilitiesRequired;
+  choosenfixtureUnit: fixtureUnit;
+
   unit: String = "persons";
   numOfPerson: number;
   areaValue: number;
@@ -38,6 +43,7 @@ export class MinimumRequiredFixturesComponent implements OnInit {
 
     this.occupancyType = typeOfOccupancyService.getTypeOfOccupancy();
     this.occupantLoadFactor = loadFactor.getOccupantLoadFactor();
+    this.totalFixturesRequired = new TotalFacilitiesRequired();
   }
 
   ngOnInit(): void {
@@ -46,6 +52,7 @@ export class MinimumRequiredFixturesComponent implements OnInit {
 
   getOccupancyType(occupancy: TypeOfOccupancy){
     this.choosenTypeOfOccupancy = occupancy;
+    this.choosenfixtureUnit = new fixtureUnit(this.choosenTypeOfOccupancy);
   }
 
   targetNumberRefesh(){

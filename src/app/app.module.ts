@@ -8,6 +8,9 @@ import { TopbarComponent } from './components/topbar/topbar.component';
 import {MaterialsModule} from './materials/materials.module';
 import { MinimumRequiredFixturesComponent } from './components/minimum-required-fixtures/minimum-required-fixtures.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UnitFixtureComponent } from './components/minimum-required-fixtures/unit-fixture/unit-fixture.component';
+import { SettingNumberForUnitsComponent } from './components/minimum-required-fixtures/setting-number-for-units/setting-number-for-units.component';
+import { UserInputComponent } from './components/minimum-required-fixtures/setting-number-for-units/user-input/user-input.component';
 
 
 @NgModule({
@@ -19,6 +22,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     TopbarComponent,
     MinimumRequiredFixturesComponent,
+    UnitFixtureComponent,
+    SettingNumberForUnitsComponent,
+    UserInputComponent,
   ],
   imports: [
     BrowserModule,

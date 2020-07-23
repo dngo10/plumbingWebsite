@@ -1,6 +1,5 @@
-import { table422_1Units, table422_1Units_Names, table422_1CategoriesNames } from 'src/app/Interfaces/table422-1Units';
 import {TypeOfOccupancy} from '../../Interfaces/occupancy-category';
-import {table422_1Categories} from '../../Interfaces/table422-1Units';
+import {table422_1Categories, table422_1CategoriesNames, table422_1Units, table422_1Units_Names} from '../../Interfaces/table422-1Units';
 import {typeAndAllowance} from '../../Interfaces/table422-1Units';
 import * as watercloset from "./WaterClosetsCal";
 import * as bathtubs_shower from "./bathtubs_showerCal";
@@ -25,7 +24,6 @@ export class fixtureUnit {
         this.occupancy = occupancy;
         this.unit = new Map<[table422_1Categories, table422_1Units] , number>();
         this.InitUnitMapAndAmmountMap();
-        this.GetUnitsAllowance();
 
         this.FixtureRequireds = new Map<table422_1Categories, number>();
 
@@ -55,10 +53,18 @@ export class fixtureUnit {
         return this.FixtureRequireds;
     }
 
-    public GetUnitsAllowance() : Set<string>{
+    public GetUnitsAllowanceStrings() : Set<string>{
         let ans: Set<string> = new Set<string>();
         for (let key of this.unit.keys()) {
             ans.add(table422_1Units_Names.get(key[1]));
+        }
+        return ans;
+    }
+
+    public GetUnitsAllowanceEnum() : Set<table422_1Units>{
+        let ans: Set<table422_1Units> = new Set<table422_1Units>();
+        for (let [k,v] of this.unit) {
+            ans.add(k[1]);
         }
         return ans;
     }
